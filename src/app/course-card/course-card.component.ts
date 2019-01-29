@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {InputDecorator} from '@angular/core/src/metadata/directives';
+import {Course} from '../model/course';
 
 @Component({
   selector: 'app-course-card',
@@ -9,7 +10,7 @@ import {InputDecorator} from '@angular/core/src/metadata/directives';
 export class CourseCardComponent implements OnInit {
 
   @Input()
-  title: string;
+  course: Course;
   constructor() { }
 
   ngOnInit() {
