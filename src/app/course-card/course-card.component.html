@@ -2,7 +2,7 @@
   <div class="course-title">
     {{cardindex + ' ' +course.description}}
   </div>
-<img width="300"  alt="Angular Logo" *ngIf="course.iconUrl"
+<img width="300"  alt="Angular Logo" *ngIf="isImageVisible()"
      [src]="course.iconUrl"/>
 <div class="course-description">
   {{course.longDescription}}
