@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
+import {Course} from './model/course';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,5 +23,9 @@ export class AppComponent {
 
   onKeyUp(newTitle: string) {
     this.data.title = newTitle;
+  }
+
+  onCourseSelected(course:Course) {
+    console.log('App Component .. card is clicked',course);
   }
 }
