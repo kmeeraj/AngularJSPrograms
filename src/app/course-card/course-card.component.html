@@ -1,4 +1,5 @@
-<div class="course-card" *ngIf="course">
+<div class="" *ngIf="course"
+  [ngClass]="{'beginner':true,'course-card':true}">
   <div class="course-title">
     {{cardindex + ' ' +course.description}}
   </div>
@@ -8,7 +9,7 @@
     <p> No Image </p>
   </ng-template>
   <div class="course-description">
-    {{course.longDescription}}
+    {{course.longDescription}}n
   </div>
   <button (click)="onCourseViewed()">View Course</button>
 </div>
