@@ -8,9 +8,8 @@ import {Course} from './model/course';
 })
 export class AppComponent {
 
-  maincourse = COURSES[0];
-  rxjscourse = COURSES[1];
-  ngrxcourse = COURSES[2];
+  courses = COURSES;
+
   data = {
      title : 'angular course'
     // title : '<h1>angular content</h1><script>alert("Alert")</script>'

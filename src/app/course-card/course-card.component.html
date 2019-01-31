@@ -1,6 +1,6 @@
 <div class="course-card">
   <div class="course-title">
-    {{course.description}}
+    {{cardindex + ' ' +course.description}}
   </div>
 <img width="300" (click)="onLogoClick()" alt="Angular Logo" [src]="course.iconUrl"/>
 <div class="course-description">
