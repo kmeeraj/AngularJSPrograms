@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
 import {Course} from './model/course';
+import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,6 +26,9 @@ export class AppComponent {
     // title : '<h1>angular content</h1><script>alert("Alert")</script>'
   };
 
+  constructor(private http: HttpClient){
+
+  }
 
   onLogoClick() {
     alert('Hello World');
@@ -34,7 +38,14 @@ export class AppComponent {
     this.data.title = newTitle;
   }
 
-  onCourseSelected(course:Course) {
+  onCourseSelected(course: Course) {
     console.log('App Component .. card is clicked',course);
+  }
+
+  ngOnInit() {
+    this.http.get('/api/courses')
+      .subscribe(
+        val => console.log(val)
+      );
   }
 }
