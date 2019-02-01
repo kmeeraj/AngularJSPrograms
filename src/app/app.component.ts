@@ -28,7 +28,7 @@ export class AppComponent {
     // title : '<h1>angular content</h1><script>alert("Alert")</script>'
   };
 
-  constructor(private http: HttpClient, private coursesService : CoursesService){
+  constructor( private coursesService: CoursesService) {
 
   }
 
@@ -46,10 +46,6 @@ export class AppComponent {
 
   ngOnInit() {
     console.log(this.coursesService);
-    const params = new HttpParams()
-      .set('page', '1')
-      .set('pageSize', '10');
-
-    this.courses$ = this.http.get<Course[]>('/api/courses', {params});
+    this.courses$ = this.coursesService.loadCourses();
   }
 }
