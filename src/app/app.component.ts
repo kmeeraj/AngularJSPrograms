@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
 
-  courses = COURSES;
+  courses ;
 
   title = COURSES[0].description;
 
@@ -45,7 +45,7 @@ export class AppComponent {
   ngOnInit() {
     this.http.get('/api/courses')
       .subscribe(
-        val => console.log(val)
+        courses => this.courses = courses
       );
   }
 }
