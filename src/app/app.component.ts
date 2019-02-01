@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
 import {Course} from './model/course';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -43,7 +43,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.http.get('/api/courses')
+
+    const params = new HttpParams()
+      .set("page","1")
+      .set("pageSize","10");
+
+    this.http.get('/api/courses',{params})
       .subscribe(
         courses => this.courses = courses
       );
