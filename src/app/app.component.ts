@@ -10,6 +10,8 @@ export class AppComponent {
 
   courses = COURSES;
 
+  startDate = new Date(2000, 0, 1);
+
   data = {
      title : 'angular course'
     // title : '<h1>angular content</h1><script>alert("Alert")</script>'
