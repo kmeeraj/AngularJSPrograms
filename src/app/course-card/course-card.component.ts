@@ -2,6 +2,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {Course} from '../model/course';
+import {CoursesService} from '../services/courses.service';
 
 @Component({
   selector: 'app-course-card',
@@ -18,9 +19,10 @@ export class CourseCardComponent implements OnInit {
 
   @Output('courseSelected')
   courseEmitter = new EventEmitter<Course>();
-  constructor() { }
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit() {
+    console.log('coursesServices course card' , this.coursesService);
   }
 
   onCourseViewed() {

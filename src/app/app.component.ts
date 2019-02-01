@@ -3,6 +3,7 @@ import {COURSES} from '../db-data';
 import {Course} from './model/course';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {CoursesService} from './services/courses.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,7 +28,7 @@ export class AppComponent {
     // title : '<h1>angular content</h1><script>alert("Alert")</script>'
   };
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private coursesService : CoursesService){
 
   }
 
@@ -44,7 +45,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-
+    console.log(this.coursesService);
     const params = new HttpParams()
       .set('page', '1')
       .set('pageSize', '10');
