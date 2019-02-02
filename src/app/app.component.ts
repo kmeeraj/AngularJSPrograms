@@ -32,20 +32,14 @@ export class AppComponent {
 
   }
 
-  onLogoClick() {
-    alert('Hello World');
-  }
-
-  onKeyUp(newTitle: string) {
-    this.data.title = newTitle;
-  }
-
-  onCourseSelected(course: Course) {
-    console.log('App Component .. card is clicked',course);
-  }
 
   ngOnInit() {
     console.log(this.coursesService);
     this.courses$ = this.coursesService.loadCourses();
   }
+
+  save (course: Course) {
+        this.coursesService.saveCourse(course);
+  }
+
 }
